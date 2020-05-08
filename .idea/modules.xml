@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/quartz.iml" filepath="$PROJECT_DIR$/quartz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quartz2.iml" filepath="$PROJECT_DIR$/quartz2.iml" />
     </modules>
   </component>
 </project>
