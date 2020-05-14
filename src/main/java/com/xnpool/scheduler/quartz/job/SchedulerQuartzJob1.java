@@ -24,6 +24,7 @@ public class SchedulerQuartzJob1 implements Job{
         System.out.println("开始："+System.currentTimeMillis());
         // TODO 业务
         try {
+
             Thread.sleep(5000L);
         } catch (InterruptedException e) {
             e.printStackTrace();

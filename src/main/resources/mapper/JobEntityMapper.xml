@@ -13,6 +13,23 @@
 		<result column="exe_class" property="exeClass" jdbcType="VARCHAR" />
 		<result column="status" property="status" jdbcType="VARCHAR" />
 	</resultMap>
+
+	<select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xnpool.scheduler.quartz.entity.JobEntity">
+		select
+		<include refid="Base_Column_List" />
+		from job_entity
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</select>
+
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from job_entity
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+
 	<sql id="Base_Column_List">
 		id,
 		job_name,
@@ -27,62 +44,46 @@
 	</sql>
 	<sql id="Example_Where_Clause">
 		<where>
-				<if test="id != null">
-					id = #{id,jdbcType=INTEGER}
-				</if>
-				<if test="jobName != null and jobName !=''">
-					and job_name = #{jobName,jdbcType=VARCHAR}
-				</if>
-				<if test="jobGroup != null and jobGroup !=''">
-					and job_group = #{jobGroup,jdbcType=VARCHAR}
-				</if>
-				<if test="cron != null and cron !=''">
-					and cron = #{cron,jdbcType=VARCHAR}
-				</if>
-				<if test="parameter != null and parameter !=''">
-					and parameter = #{parameter,jdbcType=VARCHAR}
-				</if>
-				<if test="description != null and description !=''">
-					and description = #{description,jdbcType=VARCHAR}
-				</if>
-				<if test="vmParam != null and vmParam !=''">
-					and vm_param = #{vmParam,jdbcType=VARCHAR}
-				</if>
-				<if test="jarPath != null and jarPath !=''">
-					and jar_path = #{jarPath,jdbcType=VARCHAR}
-				</if>
-				<if test="exeClass != null and exeClass !=''">
-					and exe_class = #{exeClass,jdbcType=VARCHAR}
-				</if>
-				<if test="status != null and status !=''">
-					and status = #{status,jdbcType=VARCHAR}
-				</if>
-    </where>
+			<if test="id != null">
+				id = #{id,jdbcType=INTEGER}
+			</if>
+			<if test="jobName != null and jobName !=''">
+				and job_name = #{jobName,jdbcType=VARCHAR}
+			</if>
+			<if test="jobGroup != null and jobGroup !=''">
+				and job_group = #{jobGroup,jdbcType=VARCHAR}
+			</if>
+			<if test="cron != null and cron !=''">
+				and cron = #{cron,jdbcType=VARCHAR}
+			</if>
+			<if test="parameter != null and parameter !=''">
+				and parameter = #{parameter,jdbcType=VARCHAR}
+			</if>
+			<if test="description != null and description !=''">
+				and description = #{description,jdbcType=VARCHAR}
+			</if>
+			<if test="vmParam != null and vmParam !=''">
+				and vm_param = #{vmParam,jdbcType=VARCHAR}
+			</if>
+			<if test="jarPath != null and jarPath !=''">
+				and jar_path = #{jarPath,jdbcType=VARCHAR}
+			</if>
+			<if test="exeClass != null and exeClass !=''">
+				and exe_class = #{exeClass,jdbcType=VARCHAR}
+			</if>
+			<if test="status != null and status !=''">
+				and status = #{status,jdbcType=VARCHAR}
+			</if>
+		</where>
 	</sql>
-	
+<!--
 	<select id="countByExample" resultType="java.lang.Integer" parameterType="com.xnpool.scheduler.quartz.entity.JobEntity">
 		select count(*) from job_entity
 		<if test="_parameter != null" >
 	      <include refid="Example_Where_Clause" />
 	    </if>
 	</select>
-	
-	<select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xnpool.scheduler.quartz.entity.JobEntity">
-		select
-		<include refid="Base_Column_List" />
-		from job_entity
-		<if test="_parameter != null">
-			<include refid="Example_Where_Clause" />
-		</if>
-	</select>
-	
-	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
-		select
-		<include refid="Base_Column_List" />
-		from job_entity
-		where id = #{id,jdbcType=INTEGER}
-	</select>
-	
+
 	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
 		delete from job_entity
 		where id = #{id,jdbcType=INTEGER}
@@ -173,5 +174,5 @@
 		exe_class = #{exeClass,jdbcType=VARCHAR},	
 		status = #{status,jdbcType=VARCHAR}	
 		where id = #{id,jdbcType=INTEGER}
-	</update>
+	</update>-->
 </mapper>

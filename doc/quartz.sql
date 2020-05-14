@@ -39,7 +39,7 @@ CREATE TABLE `job_entity`  (
 -- Records of job_entity
 -- ----------------------------
 INSERT INTO `job_entity` VALUES (1, 'first', 'helloworld', '0/2 * * * * ? ', '1', '第一个', '', NULL, 'com.xnpool.scheduler.quartz.job.SchedulerQuartzJob1', 'OPEN');
-INSERT INTO `job_entity` VALUES (2, 'second', 'helloworld', '0/5 * * * * ? ', '2', '第二个', '', 'D:\\company\\demo\\quartz\\doc\\sharesJob-0.0.1-SNAPSHOT.jar', '', 'OPEN');
+INSERT INTO `job_entity` VALUES (2, 'second', 'helloworld', '0/5 * * * * ? ', '2', '第二个', '', 'D:\\company\\demo\\quartz\\doc\\sharesJob-0.0.1-SNAPSHOT.jar', '', 'CLOSE');
 INSERT INTO `job_entity` VALUES (3, 'third', 'helloworld', '0/15 * * * * ? ', '3', '第三个', NULL, NULL, NULL, 'CLOSE');
 INSERT INTO `job_entity` VALUES (4, 'four', 'helloworld', '0 0/1 * * * ? *', '4', '第四个', NULL, NULL, NULL, 'CLOSE');
 INSERT INTO `job_entity` VALUES (5, 'jarJob', 'Nomal', '0 0/2 * * * ?', '5', '第五个', NULL, '', '', 'CLOSE');
